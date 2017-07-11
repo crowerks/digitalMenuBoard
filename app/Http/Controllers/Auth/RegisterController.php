@@ -90,14 +90,5 @@ class RegisterController extends Controller
     {
         return view('admin.adminRegister');
     }
-//    public function register(Request $request)
-//    {
-//        $this->validator($request->all())->validate();
-//
-//        event(new Registered($user = $this->create($request->all())));
-//
-//        //The auto login code has been removed from here.
-//
-//        return redirect($this->redirectPath());
-//    }
+
 }
