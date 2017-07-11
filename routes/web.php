@@ -24,11 +24,14 @@ Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 // Registration Routes...
-Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register')->middleware('admin');
-Route::post('success', 'Auth\RegisterController@success')->middleware('admin');
+Route::get('admin/register', 'Auth\RegisterController@showRegistrationForm')->name('register')->middleware('admin');
+Route::post('admin/register', 'Auth\RegisterController@register')->middleware('admin');
 
 // Password Reset Routes...
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
+//Route::resource('/admin', 'AdminController')->middleware('admin');
+Route::resource('/admin', 'AdminController', ['middleware' => 'admin']);
