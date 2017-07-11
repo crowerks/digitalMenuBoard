@@ -13,7 +13,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.admin');
+        return view('admin.dashboard');
     }
 
     /**
@@ -45,7 +45,7 @@ class AdminController extends Controller
      */
     public function show()
     {
-        $users = User::all();
+        $users = User::Latest()->get();
         return view('admin.users', compact('users'));
     }
 
@@ -57,7 +57,9 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        $users = User::findOrFail($id);
+
+        return view('admin.users', compact('users'));
     }
 
     /**
@@ -69,8 +71,12 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $users = User::findOrFail($id);
+        $users->update($request->all());
+        return redirect('admin/show');
+
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -80,6 +86,8 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $users = User::findOrFail($id);
+        $users->delete();
+        return redirect('admin/show');
     }
 }
