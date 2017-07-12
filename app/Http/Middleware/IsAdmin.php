@@ -16,10 +16,10 @@ class IsAdmin
     public function handle($request, Closure $next)
     {
         $user = Auth::user();
-        if ($user->isAdmin()) {
+        if ($user->isRole('Administrator')) {
             return $next($request);
         }
-        return redirect('/');
+        return redirect('/login');
     }
 
 }
