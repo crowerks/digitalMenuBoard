@@ -68,7 +68,7 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
-                    @if (Auth::check() && Auth::user()->isAdmin())
+                    @if (Auth::check() && Auth::user()->isRole('Administrator'))
                         <a href="{{ url('/register') }}">Register</a>
                     @elseif (Auth::guest())
                         <a href="{{ url('/login') }}">Login</a>

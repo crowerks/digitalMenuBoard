@@ -15,10 +15,14 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+
+Vue.component('subscriber-widget', require('./components/subscriber-widget.vue'));
 Vue.component('admin-widget', require('./components/admin-widget.vue'));
+
 const app = new Vue({
-    el: '#app'
+    el: '#app',
 });
+
 
 
 
