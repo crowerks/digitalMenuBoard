@@ -83,7 +83,7 @@ class RegisterController extends Controller
 
         $this->create($request->all());
 
-        return redirect('/admin'); // Change this route to your needs
+        return redirect('/admin/register'); // Change this route to your needs
     }
 
     public function showRegistrationForm()
