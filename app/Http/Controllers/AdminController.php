@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+
 use App\User;
 class AdminController extends Controller
 {
@@ -58,7 +60,6 @@ class AdminController extends Controller
     public function edit($id)
     {
         $users = User::findOrFail($id);
-
         return view('admin.users', compact('users'));
     }
 
@@ -74,7 +75,6 @@ class AdminController extends Controller
         $users = User::findOrFail($id);
         $users->update($request->all());
         return redirect('admin/show');
-
     }
 
 
