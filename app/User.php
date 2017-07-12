@@ -32,9 +32,9 @@ class User extends Authenticatable
         return $this->belongsTo('App\Role');
     }
 
-    public function isAdmin()
+    public function isRole($roleType)
     {
-        $role = 'Administrator';
+        $role = $roleType;
         return $this->role->name == $role;
     }
 }
