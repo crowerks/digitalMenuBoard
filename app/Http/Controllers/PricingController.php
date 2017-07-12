@@ -13,7 +13,7 @@ class PricingController extends Controller
      */
     public function index()
     {
-        //
+        return view('subscriber.pricing.index');
     }
 
     /**
