@@ -11999,6 +11999,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -32589,7 +32594,52 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "button"
     }
-  }, [_vm._v("Dashboard")])])])])
+  }, [_vm._v("Dashboard")])]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": "http://localhost/digitalMenuBoard/public/subscriber/products"
+    }
+  }, [_c('button', {
+    staticClass: "btn btn-default",
+    attrs: {
+      "type": "button"
+    }
+  }, [_vm._v("Products")])]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": "http://localhost/digitalMenuBoard/public/subscriber/trash"
+    }
+  }, [_c('button', {
+    staticClass: "btn btn-default",
+    attrs: {
+      "type": "button"
+    }
+  }, [_vm._v("Trash Bin")])]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": "http://localhost/digitalMenuBoard/public/subscriber/headings"
+    }
+  }, [_c('button', {
+    staticClass: "btn btn-default",
+    attrs: {
+      "type": "button"
+    }
+  }, [_vm._v("Headings")])]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": "http://localhost/digitalMenuBoard/public/subscriber/pricing"
+    }
+  }, [_c('button', {
+    staticClass: "btn btn-default",
+    attrs: {
+      "type": "button"
+    }
+  }, [_vm._v("Pricing")])]), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": "http://localhost/digitalMenuBoard/public/subscriber/specials"
+    }
+  }, [_c('button', {
+    staticClass: "btn btn-default",
+    attrs: {
+      "type": "button"
+    }
+  }, [_vm._v("Specials")])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
