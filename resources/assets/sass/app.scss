@@ -4,7 +4,12 @@
 
 // Variables
 @import "variables";
-@import "admin-widget";
+
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+// Admin
+@import "admin-widget";
+
+// Subscriber
+@import "subscriber-widget";
