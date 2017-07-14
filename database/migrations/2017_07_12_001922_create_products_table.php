@@ -15,7 +15,6 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('product_heading');
             $table->string('flavor');
             $table->integer('order')->unsigned();
             $table->softDeletes();
