@@ -33,9 +33,16 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
+// Subscriber
 Route::get('/subscriber', function() {
     return view('subscriber.dashboard');
-
 })->middleware('auth');
 Route::resource('/subscriber/pricing', 'PricingController', ['middleware' => 'auth']);
+Route::resource('/subscriber/specials', 'SpecialController', ['middleware' => 'auth']);
+Route::resource('/subscriber/products', 'ProductsController', ['middleware' => 'auth']);
+Route::resource('/subscriber/headings', 'HeadingController', ['middleware' => 'auth']);
+Route::resource('/subscriber/trash', 'TrashBinController', ['middleware' => 'auth']);
+
+
 
