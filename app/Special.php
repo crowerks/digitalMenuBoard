@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Special extends Model
 {
-    //
+    protected $fillable = ['special'];
 }
