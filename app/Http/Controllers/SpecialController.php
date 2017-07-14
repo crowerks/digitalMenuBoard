@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Special;
 class SpecialController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class SpecialController extends Controller
      */
     public function index()
     {
-        //
+        $specials = Special::all();
+        return view('subscriber.specials.index', compact('specials'));
     }
 
     /**
@@ -23,7 +24,7 @@ class SpecialController extends Controller
      */
     public function create()
     {
-        //
+        return view('subscriber.specials.index');
     }
 
     /**
@@ -34,7 +35,12 @@ class SpecialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $special = new Special();
+        $special->special = $request['special'];
+        $special->created_at = date('Y-m-d H:i:s');
+        $special->updated_at  =  date('Y-m-d H:i:s');
+        $special->save();
+        return redirect('/subscriber/specials');
     }
 
     /**
@@ -45,7 +51,6 @@ class SpecialController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -56,7 +61,7 @@ class SpecialController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -64,11 +69,14 @@ class SpecialController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Responsed
      */
     public function update(Request $request, $id)
     {
-        //
+        $specials = Special::findOrFail($id);
+        $specials->update($request->all());
+        return redirect('/subscriber/specials');
+
     }
 
     /**
@@ -79,6 +87,8 @@ class SpecialController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $specials = Special::findOrFail($id);
+        $specials->delete();
+        return redirect('/subscriber/specials');
     }
 }

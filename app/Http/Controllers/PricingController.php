@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Pricing;
 use Illuminate\Http\Request;
 
 class PricingController extends Controller
@@ -13,7 +13,8 @@ class PricingController extends Controller
      */
     public function index()
     {
-        return view('subscriber.pricing.index');
+        $prices = Pricing::all();
+        return view('subscriber.pricing.index', compact('prices'));
     }
 
     /**
@@ -23,7 +24,7 @@ class PricingController extends Controller
      */
     public function create()
     {
-        //
+        return view('subscriber.pricing.index');
     }
 
     /**
@@ -34,7 +35,13 @@ class PricingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $prices = new Pricing();
+        $prices->size = $request['size'];
+        $prices->price = $request['price'];
+        $prices->created_at = date('Y-m-d H:i:s');
+        $prices->updated_at  =  date('Y-m-d H:i:s');
+        $prices->save();
+        return redirect('/subscriber/pricing');
     }
 
     /**
@@ -45,7 +52,6 @@ class PricingController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -56,7 +62,7 @@ class PricingController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -64,11 +70,14 @@ class PricingController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Responsed
      */
     public function update(Request $request, $id)
     {
-        //
+        $prices = Pricing::findOrFail($id);
+        $prices->update($request->all());
+        return redirect('/subscriber/pricing');
+
     }
 
     /**
@@ -79,6 +88,8 @@ class PricingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $prices = Pricing::findOrFail($id);
+        $prices->delete();
+        return redirect('/subscriber/pricing');
     }
 }
