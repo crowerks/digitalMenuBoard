@@ -1,16 +1,6 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-//
+
 Route::get('/', function () {
     return view('welcome');
 
@@ -18,23 +8,28 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index');
 
-// Authentication Routes...
+// Menu Board Routes
+Route::get('/menu-board', function() {
+   return view('menu-board');
+});
+
+// Authentication Routes
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-// Admin Routes...
+// Admin Routes
 Route::get('admin/register', 'Auth\RegisterController@showRegistrationForm')->name('register')->middleware('admin');
 Route::post('admin/register', 'Auth\RegisterController@register')->middleware('admin');
 Route::resource('/admin', 'AdminController', ['middleware' => 'admin']);
 
-// Password Reset Routes...
+// Password Reset Routes
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
-// Subscriber
+// Subscriber Routes
 Route::get('/subscriber', function() {
     return view('subscriber.dashboard');
 })->middleware('auth');
