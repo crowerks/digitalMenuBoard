@@ -14,7 +14,8 @@ class SpecialController extends Controller
     public function index()
     {
         $specials = Special::all();
-        return view('subscriber.specials.index', compact('specials'));
+        $acitve = Special::active();
+        return view('subscriber.specials.index', compact('specials', 'active'));
     }
 
     /**
@@ -37,6 +38,7 @@ class SpecialController extends Controller
     {
         $special = new Special();
         $special->special = $request['special'];
+        $special->active = 0;
         $special->created_at = date('Y-m-d H:i:s');
         $special->updated_at  =  date('Y-m-d H:i:s');
         $special->save();
