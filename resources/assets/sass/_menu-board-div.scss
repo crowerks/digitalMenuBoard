@@ -1,0 +1,71 @@
+.full-height {
+  height: 100%;
+}
+
+.half-height {
+  height: 50%;
+  overflow: hidden;
+}
+.bg-pink {
+  background-color: $lightpink;
+  background-image: url(/../images/ice-cream-edit.jpg);
+  background-size: cover;
+}
+
+.bg-orange {
+  background-color: $lightorange;
+}
+
+.bg-blue {
+  background-color: $lightblue;
+}
+.pink-burbles {
+  height:90px;
+  background-image: url(/../images/pink-banner.png);
+  background-repeat: repeat-x;
+
+}
+
+.heading-banner {
+  height: 200px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom left;
+  margin: 0;
+}
+.banner-pink {
+  background-image: url(/../images/banner-pink.png);
+
+}
+.banner-orange {
+  background-image: url(/../images/banner-orange.png);
+  background-position: bottom right;
+}
+.banner-orange h1 {
+  padding-right: 130px !important;
+}
+.banner-blue {
+  background-image: url(/../images/banner-blue.png);
+}
+.background-image-contain {
+  background-position: top left;
+  background-size: contain;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+.background-image-cover {
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.special-div {
+  position: relative;
+  top: 10%;
+  width: 25%;
+  left: 10%;
+}
+.special-div h2 {
+  line-height: ($font-size * 2 );
+}

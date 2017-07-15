@@ -1,15 +1,32 @@
 
 <template>
-    <div class="admin-widget">
-          <div class="btn-group-vertical" role="group" aria-label="...">
-              <a href="http://localhost/digitalMenuBoard/public/admin"> <button type="button" class="btn btn-default">Dashboard</button></a>
-              <a href="http://localhost/digitalMenuBoard/public/admin/register"> <button type="button" class="btn btn-default">Register</button></a>
-              <a href="http://localhost/digitalMenuBoard/public/admin/show"> <button type="button" class="btn btn-default">Users</button></a>
-              <a href="http://localhost/digitalMenuBoard/public/subscriber"> <button type="button" class="btn btn-default">Subscriber Dashboard</button></a>
+         <div id="wrapper">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+             <br>
+                <ul class="sidebar-nav">
 
-          </div>
+                    <li>
+                        <a href="http://localhost/digitalMenuBoard/public/admin">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost/digitalMenuBoard/public/admin/register">Register</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost/digitalMenuBoard/public/admin/show">Users</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost/digitalMenuBoard/public/subscriber">Subscriber</a>
+                    </li>
+
+                </ul>
+             </div>
+
+             <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Panel</a>
+
+         </div>
+        <!-- /#wrapper -->
       </div>
-
 </template>
 
 <script>

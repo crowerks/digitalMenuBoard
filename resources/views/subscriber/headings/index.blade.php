@@ -1,9 +1,13 @@
-@extends('layouts.app');
+@extends('layouts.app')
 
 @section('content')
     <subscriber-widget></subscriber-widget>
-    {!! Form::open(['method' => 'POST', 'action' => 'HeadingController@store'])  !!}
+    {!! Form::open(['method' => 'POST', 'action' => 'HeadingController@store', 'files' => true])  !!}
 
+    <div class="form-group">
+        {!! Form::label('fi;e', 'Insert Image') !!}
+        {!! Form::file('file', ['class'=> 'form-control']) !!}
+    </div>
     <div class="form-group">
         {!! Form::label('products', 'Product Heading') !!}
         {!! Form::text('products', null, ['class'=> 'form-control']) !!}

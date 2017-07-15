@@ -8,8 +8,20 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+
 // Admin
 @import "admin-widget";
 
 // Subscriber
 @import "subscriber-widget";
+
+// Main
+@import "main";
+
+// Menu-board
+@import "menu-board-carousel";
+@import "menu-board-div";
+@import "menu-board-header";
+@import "menu-board-starburst";
+@import "menu-board-typography";
+@import "menu-board-test";

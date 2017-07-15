@@ -11109,6 +11109,11 @@ var app = new Vue({
   el: '#app'
 });
 
+$("#menu-toggle").click(function (e) {
+  e.preventDefault();
+  $("#wrapper").toggleClass("toggled");
+});
+
 /***/ }),
 /* 11 */
 /***/ (function(module, exports) {
@@ -11976,6 +11981,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -11989,6 +12011,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -32578,68 +32622,46 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _vm._m(0)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "subscriber-widget"
-  }, [_c('div', {
-    staticClass: "btn-group-vertical",
     attrs: {
-      "role": "group",
-      "aria-label": "..."
+      "id": "wrapper"
     }
-  }, [_c('a', {
+  }, [_c('div', {
+    attrs: {
+      "id": "sidebar-wrapper"
+    }
+  }, [_c('br'), _vm._v(" "), _c('ul', {
+    staticClass: "sidebar-nav"
+  }, [_c('li', [_c('a', {
     attrs: {
       "href": "http://localhost/digitalMenuBoard/public/subscriber"
     }
-  }, [_c('button', {
-    staticClass: "btn btn-default",
-    attrs: {
-      "type": "button"
-    }
-  }, [_vm._v("Dashboard")])]), _vm._v(" "), _c('a', {
-    attrs: {
-      "href": "http://localhost/digitalMenuBoard/public/subscriber/products"
-    }
-  }, [_c('button', {
-    staticClass: "btn btn-default",
-    attrs: {
-      "type": "button"
-    }
-  }, [_vm._v("Products")])]), _vm._v(" "), _c('a', {
-    attrs: {
-      "href": "http://localhost/digitalMenuBoard/public/subscriber/trash"
-    }
-  }, [_c('button', {
-    staticClass: "btn btn-default",
-    attrs: {
-      "type": "button"
-    }
-  }, [_vm._v("Trash Bin")])]), _vm._v(" "), _c('a', {
+  }, [_vm._v("Dashboard")])]), _vm._v(" "), _c('li', [_c('a', {
     attrs: {
       "href": "http://localhost/digitalMenuBoard/public/subscriber/headings"
     }
-  }, [_c('button', {
-    staticClass: "btn btn-default",
+  }, [_vm._v("Headings")])]), _vm._v(" "), _c('li', [_c('a', {
     attrs: {
-      "type": "button"
+      "href": "http://localhost/digitalMenuBoard/public/subscriber/products"
     }
-  }, [_vm._v("Headings")])]), _vm._v(" "), _c('a', {
+  }, [_vm._v("Products")])]), _vm._v(" "), _c('li', [_c('a', {
     attrs: {
       "href": "http://localhost/digitalMenuBoard/public/subscriber/pricing"
     }
-  }, [_c('button', {
-    staticClass: "btn btn-default",
-    attrs: {
-      "type": "button"
-    }
-  }, [_vm._v("Pricing")])]), _vm._v(" "), _c('a', {
+  }, [_vm._v("Pricing")])]), _vm._v(" "), _c('li', [_c('a', {
     attrs: {
       "href": "http://localhost/digitalMenuBoard/public/subscriber/specials"
     }
-  }, [_c('button', {
+  }, [_vm._v("Specials")])]), _vm._v(" "), _c('li', [_c('a', {
+    attrs: {
+      "href": "http://localhost/digitalMenuBoard/public/subscriber/trash"
+    }
+  }, [_vm._v("Trash Bin")])])])]), _vm._v(" "), _c('a', {
     staticClass: "btn btn-default",
     attrs: {
-      "type": "button"
+      "href": "#menu-toggle",
+      "id": "menu-toggle"
     }
-  }, [_vm._v("Specials")])])])])
+  }, [_vm._v("Panel")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -32657,50 +32679,38 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _vm._m(0)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "admin-widget"
-  }, [_c('div', {
-    staticClass: "btn-group-vertical",
     attrs: {
-      "role": "group",
-      "aria-label": "..."
+      "id": "wrapper"
     }
-  }, [_c('a', {
+  }, [_c('div', {
+    attrs: {
+      "id": "sidebar-wrapper"
+    }
+  }, [_c('br'), _vm._v(" "), _c('ul', {
+    staticClass: "sidebar-nav"
+  }, [_c('li', [_c('a', {
     attrs: {
       "href": "http://localhost/digitalMenuBoard/public/admin"
     }
-  }, [_c('button', {
-    staticClass: "btn btn-default",
-    attrs: {
-      "type": "button"
-    }
-  }, [_vm._v("Dashboard")])]), _vm._v(" "), _c('a', {
+  }, [_vm._v("Dashboard")])]), _vm._v(" "), _c('li', [_c('a', {
     attrs: {
       "href": "http://localhost/digitalMenuBoard/public/admin/register"
     }
-  }, [_c('button', {
-    staticClass: "btn btn-default",
-    attrs: {
-      "type": "button"
-    }
-  }, [_vm._v("Register")])]), _vm._v(" "), _c('a', {
+  }, [_vm._v("Register")])]), _vm._v(" "), _c('li', [_c('a', {
     attrs: {
       "href": "http://localhost/digitalMenuBoard/public/admin/show"
     }
-  }, [_c('button', {
-    staticClass: "btn btn-default",
-    attrs: {
-      "type": "button"
-    }
-  }, [_vm._v("Users")])]), _vm._v(" "), _c('a', {
+  }, [_vm._v("Users")])]), _vm._v(" "), _c('li', [_c('a', {
     attrs: {
       "href": "http://localhost/digitalMenuBoard/public/subscriber"
     }
-  }, [_c('button', {
+  }, [_vm._v("Subscriber")])])])]), _vm._v(" "), _c('a', {
     staticClass: "btn btn-default",
     attrs: {
-      "type": "button"
+      "href": "#menu-toggle",
+      "id": "menu-toggle"
     }
-  }, [_vm._v("Subscriber Dashboard")])])])])
+  }, [_vm._v("Panel")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

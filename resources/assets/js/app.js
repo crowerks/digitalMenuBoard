@@ -7,6 +7,7 @@
 require('jquery-ui');
 require('./bootstrap');
 
+
 window.Vue = require('vue');
 
 /**
@@ -23,7 +24,8 @@ const app = new Vue({
     el: '#app',
 });
 
-
-
-
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
 

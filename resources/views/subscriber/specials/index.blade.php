@@ -1,16 +1,15 @@
-@extends('layouts.app');
+@extends('layouts.app')
 
 @section('content')
+
+    <h1>{{\App\Special::active()}}</h1>
+
     <subscriber-widget></subscriber-widget>
     {!! Form::open(['method' => 'POST', 'action' => 'SpecialController@store'])  !!}
 
     <div class="form-group">
-        {!! Form::label('special', 'Special') !!}
+        {!! Form::label('special', 'Special:') !!}
         {!! Form::text('special', null, ['class'=> 'form-control']) !!}
-
-
-
-
     </div>
     <div class="form-group">
         {!! Form::submit('Create Post', ['class' => 'btn btn-primary']) !!}
@@ -18,8 +17,9 @@
     {!! Form::close() !!}
     @foreach($specials as $special)
         {!! Form::model($special, ['method' => 'PATCH', 'action' => ['SpecialController@update', $special->id]])  !!}
-        {!! Form::label('special', 'Special') !!}
+        {!! Form::label('special', 'Special:') !!}
         {!! Form::text('special', null, ['class'=> 'form-control']) !!}
+        {!! Form::select('active', [ 0 => 'None', 1 => 'Activate', 2 => 'Deactivate'], null, ['placeholder' => 'None']) !!};
 
 
 

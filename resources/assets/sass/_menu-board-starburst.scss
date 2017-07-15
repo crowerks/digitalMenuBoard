@@ -1,0 +1,69 @@
+.position-burst {
+  position: absolute;
+  z-index: 15;
+  top: 30%;
+  width: 70%;
+  height: 35%;
+  left: 15%;
+}
+.position-burst-right {
+  position: absolute;
+  z-index: 15;
+  top: 50%;
+  width: 20%;
+  height: 35%;
+  right: 10%;
+}
+#starburst {
+  background-position: center;
+  background-size: contain;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#starburst h3 {
+  text-align: center;
+  vertical-align: middle;
+}
+.starburst-white {
+  background-image: url(/../images/starburst-white.png);
+
+}
+.starburst-blue {
+  background-image: url(/../images/starburst-blue.png);
+}
+
+//#starburst {
+//    background: $white;
+//    width: 180px;
+//    height: 180px;
+//    position: relative;
+//    text-align: center;
+//}
+//#starburst:before, #starburst:after {
+//    content: "";
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    height: 180px;
+//    width: 180px;
+//    background: $white;
+//}
+//#starburst:before {
+//    -webkit-transform: rotate(30deg);
+//       -moz-transform: rotate(30deg);
+//        -ms-transform: rotate(30deg);
+//         -o-transform: rotate(30deg);
+//}
+//#starburst:after {
+//    -webkit-transform: rotate(60deg);
+//       -moz-transform: rotate(60deg);
+//        -ms-transform: rotate(60deg);
+//         -o-transform: rotate(60deg);
+//}
+//.starburst-white {
+//    background: $white;
+//}

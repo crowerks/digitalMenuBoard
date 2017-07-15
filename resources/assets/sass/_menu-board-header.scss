@@ -1,0 +1,22 @@
+.color-bar {
+  min-height: $color-bar;
+  background-image: url('http://schwieterts.com/wp-content/uploads/2016/07/color-bar.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.navbar-brand {
+  float: left;
+  position: absolute;
+  z-index: 11;
+  padding: 0;
+  left: 50%;
+  margin-top: -$color-bar;
+  width: 400px;
+  margin-left: -200px;
+}
+.white-bar-top {
+  padding-top: ($color-bar - 10px);
+  border-top: 30px solid $white;
+  border-image: url(/../images/color-bar.jpg) 50 repeat stretch;
+
+}
