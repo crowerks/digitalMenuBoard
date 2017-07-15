@@ -19,7 +19,7 @@ class IsAdmin
         if ($user->isRole('Administrator')) {
             return $next($request);
         }
-        return redirect('/login');
+        return redirect('/subscriber');
     }
 
 }
