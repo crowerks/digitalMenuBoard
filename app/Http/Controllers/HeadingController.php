@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Heading;
+use App\Images;
 class HeadingController extends Controller
 {
     /**
@@ -35,6 +36,14 @@ class HeadingController extends Controller
      */
     public function store(Request $request)
     {
+        $image = new Images();
+        if ($file = $request->file('file')){
+            $name = $file->getClientOriginalName();
+            $file->move('images', $name);
+            $image->image_path = $name;
+            $image->save();
+        }
+
         $heading = new Heading();
         $heading->products = $request['products'];
         $heading->pricing = $request['pricing'];
