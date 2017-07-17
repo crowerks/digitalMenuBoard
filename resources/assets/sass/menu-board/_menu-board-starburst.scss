@@ -23,11 +23,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  h3 {
+    text-align: center;
+    vertical-align: middle;
+  }
 }
-#starburst h3 {
-  text-align: center;
-  vertical-align: middle;
-}
+
 .starburst-white {
   background-image: url(/../images/starburst-white.png);
 

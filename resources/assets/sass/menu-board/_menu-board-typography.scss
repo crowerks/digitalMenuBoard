@@ -17,17 +17,17 @@
   text-transform: uppercase;
 }
 h1 {
-  font-size: $font-size + 20;
+  font-size: $menuboard-font-size + 20;
   margin: 0;
   padding: 0;
-  font-weight: $bold;
+  font-weight: $menuboard-font-size;
 }
 h2 {
-  font-size: $font-size + 10;
-  font-weight: $bold;
+  font-size: $menuboard-font-size + 10;
+  font-weight: $menuboard-font-weight;
 }
 h3 {
-  font-size: $font-size;
+  font-size: $menuboard-font-size;
 }
 .heading-banner h1 {
   padding: 70px 50px;
