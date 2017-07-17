@@ -22,6 +22,8 @@ $font-family-sans-serif: "Raleway", sans-serif;
 $font-size-base: 14px;
 $line-height-base: 1.6;
 $text-color: #636b6f;
+$menuboard-font-size: 34px;
+$menuboard-font-weight: 700;
 
 // Navbar
 $navbar-default-bg: #fff;
@@ -37,17 +39,18 @@ $input-color-placeholder: lighten($text-color, 30%);
 // Panels
 $panel-default-heading-bg: #fff;
 
-// Admin widget
+/* Admin widget */
 $admin-widget-color: #495d7c;
 $admin-widget-width: 10%;
 $admin-widget-height: 100%;
 
-// Subscriber widget
+/* Subscriber widget */
 $subscriber-widget-color: #495d7c;
 $subscriber-widget-width: 10%;
 $subscriber-widget-height: 100%;
 
-// Main page Styles
+/* Menu Board */
+
 //colors
 $white: #FFFFFF;
 $black: #5f2a2b;
@@ -58,13 +61,12 @@ $lightpink: #f37a9f;
 $lightorange: #f79e65;
 $lightblue: #8ed7e3;
 
-//font size
-$font-size: 34px;
-$bold: 700;
+//font size menu board
+
 
 //sizing
 $color-bar: 30px;
-$li-height: ($font-size * 4 );
+$li-height: ($menuboard-font-size * 4 );
 
 //images
 $opacity: 0.6;

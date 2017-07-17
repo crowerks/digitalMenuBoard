@@ -8,7 +8,7 @@
 }
 .bg-pink {
   background-color: $lightpink;
-  background-image: url(/../images/ice-cream-edit.jpg);
+  background-image: url(/resources/assets/images/ice-cream-edit.jpg);
   background-size: cover;
 }
 
@@ -21,7 +21,7 @@
 }
 .pink-burbles {
   height:90px;
-  background-image: url(/../images/pink-banner.png);
+  background-image: url(/resources/assets/images/pink-banner.png);
   background-repeat: repeat-x;
 
 }
@@ -35,11 +35,11 @@
   margin: 0;
 }
 .banner-pink {
-  background-image: url(/../images/banner-pink.png);
+  background-image: url(/resources/assets/images/banner-pink.png);
 
 }
 .banner-orange {
-  background-image: url(/../images/banner-orange.png);
+  background-image: url(/resources/assets/images/banner-orange.png);
   background-position: bottom right;
 
   h1 {
@@ -48,7 +48,7 @@
 }
 
 .banner-blue {
-  background-image: url(/../images/banner-blue.png);
+  background-image: url(/resources/assets/images/banner-blue.png);
 }
 .background-image-contain {
   background-position: top left;

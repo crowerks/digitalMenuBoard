@@ -1,6 +1,6 @@
 
 <template>
-         <div id="wrapper">
+         <div id="sidebar-widget">
             <!-- Sidebar -->
             <div id="sidebar-wrapper">
              <br>

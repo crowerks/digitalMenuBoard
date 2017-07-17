@@ -13,10 +13,10 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+ <body id="backend-body">
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -69,8 +69,12 @@
                 </div>
             </div>
         </nav>
-
-        @yield('content')
+        <div class="clear-fix"></div>
+        <div class="container-fluid">
+            <div id="wrapper">
+            @yield('content')
+            </div>
+        </div>
     </div>
 
     <!-- Scripts -->

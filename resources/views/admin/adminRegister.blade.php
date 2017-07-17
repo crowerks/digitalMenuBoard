@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.backend')
 
 @section('content')
 
     <admin-widget></admin-widget>
-    <div class="container">
+    <div id="page-content-wrapper">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">

@@ -1,30 +1,31 @@
-@extends('layouts.app')
+@extends('layouts.backend')
 
 @section('content')
     <subscriber-widget></subscriber-widget>
-    {!! Form::open(['method' => 'POST', 'action' => 'ProductsController@store'])  !!}
-
-    <div class="form-group">
-        {!! Form::label('flavor', 'Title:') !!}
-        {!! Form::text('flavor', null, ['class'=> 'form-control'])!!}
-        {!! Form::label('order', 'Order:') !!}
-        {!! Form::text('order', null, ['class'=> 'form-control'])!!}
-
-    </div>
-    <div class="form-group">
-        {!! Form::submit('Create Post', ['class' => 'btn btn-primary']) !!}
-    </div>
-    {!! Form::close() !!}
+    <div id="page-content-wrapper">
+        <div class="col-sm-offset-2 col-sm-10">
+            <h2> Update Product Information </h2>
+        </div>
     @foreach($products as $product)
-        {!! Form::model($product, ['method' => 'PATCH', 'action' => ['ProductsController@update', $product->id]])  !!}
-        {!! Form::label('flavor', 'Flavor:') !!}
-        {!! Form::text('flavor', null, ['class'=> 'form-control']) !!}
-        {!! Form::submit('Update', ['class' => 'btn btn-info']) !!}
-        {!! Form::close() !!}
-
-        {!! Form::open(['method' => 'DELETE', 'action' => ['ProductsController@destroy', $product->id]])  !!}
-        {!! Form::submit('Delete', ['class' => 'btn btn-info']) !!}
-        {!! Form::close() !!}
+        {!! Form::model($product, ['class' => 'form-horizontal', 'method' => 'PATCH', 'action' => ['ProductsController@update', $product->id]])  !!}
+        <div class="form-group">
+            {!! Form::label('flavor', 'Flavor', ['class' => 'control-label col-sm-2']) !!}
+            <div class="col-sm-6">
+                {!! Form::text('flavor', null, ['class'=> 'form-control']) !!}
+            </div>
+        </div>
+        <div class="form-group">
+            {!! Form::label('order', 'Order', ['class' => 'control-label col-sm-2']) !!}
+            <div class="col-sm-6">
+                {!! Form::text('counter', null, ['class'=> 'form-control']) !!}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                {!! Form::submit('Update', ['class' => 'btn btn-success']) !!}
+                {!! Form::close() !!}
+            </div>
+        </div>
     @endforeach
-
+    </div>
 @endsection
