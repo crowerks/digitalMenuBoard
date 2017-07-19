@@ -18,21 +18,43 @@
                 {!! Form::label('role_id', 'Role', ['class' => 'control-label col-sm-2']) !!}
 
                 <div class="col-sm-10">
-                    {!! Form::select('role_id', [1 => 'Administrator', 2 => 'Subscriber'], null, ['placeholder' => 'Role']) !!};
+                    {!! Form::select('role_id', [1 => 'Administrator', 2 => 'Subscriber'], null, ['placeholder' => 'Role']) !!}
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    {!! Form::submit('Update', ['class' => 'btn btn-success']) !!}
-                    {!! Form::close() !!}
-
-                    {!! Form::open(['method' => 'DELETE', 'action' => ['AdminController@destroy', $user->id]])  !!}
-                    {!! Form::submit('Delete', ['class' => 'btn btn-danger', 'id' => 'delete-button']) !!}
-                    {!! Form::close() !!}
-                </div>
+                  {!! Form::submit('Update', ['class' => 'btn btn-success']) !!}
+                  {!! Form::close() !!}
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                  </div>
             </div>
-        @endforeach
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="deleteModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Delete</h4>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to delete this user?</p>
+          </div>
+          <div class="modal-footer">
+            {!! Form::open(['method' => 'DELETE', 'action' => ['AdminController@destroy', $user->id]])  !!}
+            {!! Form::submit('Delete', ['class' => 'btn btn-danger', 'id' => 'modal-delete-button']) !!}
+            {!! Form::close() !!}
+            <button type="button" class="btn btn-primary" data-dismiss="modal" id="modal-no-button">No</button>
+          </div>
+        </div>
+
+      </div>
     </div>
 
+  </div>
+    @endforeach
 @endsection

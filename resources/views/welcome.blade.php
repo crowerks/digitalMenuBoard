@@ -62,33 +62,19 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
-                    @if (Auth::check() && Auth::user()->isRole('Administrator'))
-                        <a href="{{ url('/register') }}">Register</a>
-                    @elseif (Auth::guest())
+                    @if (Auth::guest())
                         <a href="{{ url('/login') }}">Login</a>
 
                     @endif
                 </div>
             @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
+            <h1>You have reached the Digital Menu-board please login to continue</h1>
     </body>
 </html>

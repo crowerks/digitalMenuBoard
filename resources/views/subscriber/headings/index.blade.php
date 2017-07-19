@@ -3,7 +3,7 @@
 @section('content')
     <subscriber-widget></subscriber-widget>
     <div id="page-content-wrapper">
-        {{--<form class="form-horizontal">--}}
+       {{--<form class="form-horizontal">--}}
             {{--{!! Form::open(['method' => 'POST', 'action' => 'HeadingController@store', 'files' => true])  !!}--}}
 
             {{--<div class="form-group">--}}

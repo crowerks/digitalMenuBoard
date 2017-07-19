@@ -51,6 +51,14 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    @if(Auth::user()->isRole('Administrator'))
+                                        <li>
+                                            <a href="http://localhost/digitalMenuBoard/public/admin">Administrator</a>
+                                        </li>
+                                        <li>
+                                            <a href="http://localhost/digitalMenuBoard/public/subscriber">Subscriber</a>
+                                        </li>
+                                    @endif
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -62,8 +70,9 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+
                                 </ul>
-                            </li>
+
                         @endif
                     </ul>
                 </div>
@@ -71,7 +80,7 @@
         </nav>
         <div class="clear-fix"></div>
         <div class="container-fluid">
-            <div id="wrapper">
+            <div id="wrapper" class="toggled">
             @yield('content')
             </div>
         </div>

@@ -14,12 +14,12 @@
                 {!! Form::text('flavor', null, ['class'=> 'form-control']) !!}
             </div>
         </div>
-        <div class="form-group">
-            {!! Form::label('order', 'Order', ['class' => 'control-label col-sm-2']) !!}
-            <div class="col-sm-6">
-                {!! Form::text('counter', null, ['class'=> 'form-control']) !!}
-            </div>
-        </div>
+        {{--<div class="form-group">--}}
+            {{--{!! Form::label('order', 'Order', ['class' => 'control-label col-sm-2']) !!}--}}
+            {{--<div class="col-sm-6">--}}
+                {{--{!! Form::text('order', null, ['class'=> 'form-control']) !!}--}}
+            {{--</div>--}}
+        {{--</div>--}}
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 {!! Form::submit('Update', ['class' => 'btn btn-success']) !!}

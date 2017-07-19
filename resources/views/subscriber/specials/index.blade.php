@@ -38,7 +38,7 @@
             <div class="form-group">
                 {!! Form::label('active', 'Active', ['class' => 'control-label col-sm-2']) !!}
                 <div class="col-sm-10">
-                    {!! Form::select('active', [ 0 => 'None', 1 => 'Activate', 2 => 'Deactivate'], null, ['placeholder' => 'None']) !!};
+                    {!! Form::select('active', [ 0 => 'None', 1 => 'Activate', 2 => 'Deactivate'], null, ['placeholder' => 'None']) !!}
                 </div>
             </div>
 
