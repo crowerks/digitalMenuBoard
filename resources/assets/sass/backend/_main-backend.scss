@@ -6,6 +6,7 @@
   width: 100%;
   position: absolute;
   padding: 15px;
+
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -15,4 +16,14 @@
 
 .clear-fix {
   margin-top: -22px;
+}
+.dashboard-heading {
+  text-align: center;
+}
+#modal-delete-button {
+      margin-right: 53px;
+}
+
+#modal-no-button {
+      margin-top: -58px;
 }
