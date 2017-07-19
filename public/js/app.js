@@ -11994,10 +11994,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -32651,11 +32647,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "http://localhost/digitalMenuBoard/public/subscriber/specials"
     }
-  }, [_vm._v("Specials")])]), _vm._v(" "), _c('li', [_c('a', {
-    attrs: {
-      "href": "http://localhost/digitalMenuBoard/public/subscriber/trash"
-    }
-  }, [_vm._v("Trash Bin")])])])]), _vm._v(" "), _c('a', {
+  }, [_vm._v("Specials")])]), _vm._v(" "), _c('li')])]), _vm._v(" "), _c('a', {
     staticClass: "btn btn-default",
     attrs: {
       "href": "#menu-toggle",
@@ -32700,11 +32692,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "http://localhost/digitalMenuBoard/public/admin/show"
     }
-  }, [_vm._v("Users")])]), _vm._v(" "), _c('li', [_c('a', {
-    attrs: {
-      "href": "http://localhost/digitalMenuBoard/public/subscriber"
-    }
-  }, [_vm._v("Subscriber")])])])]), _vm._v(" "), _c('a', {
+  }, [_vm._v("Users")])])])]), _vm._v(" "), _c('a', {
     staticClass: "btn btn-default",
     attrs: {
       "href": "#menu-toggle",
