@@ -19,9 +19,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-
-        $products = Product::where('order', '<=', 40)->orderBy('order', 'asc')->get();
-
+        $products = Product::where('order', '<=', 40)->orderBy('flavor', 'asc')->get();
 
         return view('subscriber.products.index', compact('products'));
     }
@@ -83,11 +81,8 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $allProducts = Product::where('order', '<=', 40)->get();
         $products = Product::findOrFail($id);
         $products->update($request->all());
-        $allProducts->reorder('order', 'asc')->take(5);
-
         return redirect('/subscriber/products');
 
     }
