@@ -14,7 +14,7 @@ class Special extends Model
             return Special::where('active', 1)->first()->special;
         }
         else {
-           return "Please input value";
+           return "Please activate a special";
         }
 
     }
