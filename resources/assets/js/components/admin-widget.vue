@@ -15,10 +15,6 @@
                     <li>
                         <a href="http://localhost/digitalMenuBoard/public/admin/show">Users</a>
                     </li>
-                    <li>
-                        <a href="http://localhost/digitalMenuBoard/public/subscriber">Subscriber</a>
-                    </li>
-
                 </ul>
              </div>
 
