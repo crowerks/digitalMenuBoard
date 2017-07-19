@@ -6,7 +6,7 @@ Route::get('/', function () {
 
 });
 
-Route::get('/home', 'HomeController@index');
+// Route::get('/home', 'HomeController@index');
 
 // Menu Board Routes
 Route::get('/menu-board', function() {
@@ -38,6 +38,3 @@ Route::resource('/subscriber/specials', 'SpecialController', ['middleware' => 'a
 Route::resource('/subscriber/products', 'ProductsController', ['middleware' => 'auth']);
 Route::resource('/subscriber/headings', 'HeadingController', ['middleware' => 'auth']);
 Route::resource('/subscriber/trash', 'TrashBinController', ['middleware' => 'auth']);
-
-
-
