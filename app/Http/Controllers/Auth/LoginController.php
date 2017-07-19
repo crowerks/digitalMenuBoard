@@ -45,23 +45,7 @@ class LoginController extends Controller
 
 
     }
-
-//    protected function authenticated(Request $request, $user)
-//    {
-//
-//
-//
-//    }
-
-//    public function login(Request $request, $user)
-//    {
-//        if ($user->isRole('Administrator')) {
-//            return redirect('/admin');
-//        }
-//        else {
-//            return redirect('/subscriber');
-//        }
-//    }
-
-
+    // public function logout() {
+    //   return redirect("/");
+    // }
 }
