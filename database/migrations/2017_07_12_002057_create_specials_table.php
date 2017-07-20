@@ -16,6 +16,7 @@ class CreateSpecialsTable extends Migration
         Schema::create('specials', function (Blueprint $table) {
             $table->increments('id');
             $table->text('special');
+            $table->text('pricing');
             $table->integer('active');
             $table->timestamps();
         });
