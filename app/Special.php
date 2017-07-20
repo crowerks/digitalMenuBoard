@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Special extends Model
 {
-    protected $fillable = ['special', 'active'];
+    protected $fillable = ['special', 'active', 'pricing'];
 
     public function scopeActive($query)
     {
-        if (Special::where('active', 1)->first()) {
-            return Special::where('active', 1)->first()->special;
+        if ($query->where('active', 1)->first()) {
+            return $query->where('active', 1)->first();
         }
         else {
            return "Please activate a special";
