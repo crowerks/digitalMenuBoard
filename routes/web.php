@@ -6,18 +6,6 @@ Route::get('/', function () {
 
 });
 
- Route::get('/home', function() {
-
-         $arr = array('chocolates', 'vanillas', 'cherrys');
-         $id = array(1, 2,3);
-         for($i = 0; $i < 2; $i++) {
-             DB::table('products')->where('id', $id[$i])->update(['flavor' => $arr[$i]]);
-         }
-
-
-
- });
-
 // Menu Board Routes
 Route::get('/menu-board', function() {
    return view('menu-board');
