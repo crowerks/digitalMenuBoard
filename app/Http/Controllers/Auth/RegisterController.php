@@ -82,7 +82,7 @@ class RegisterController extends Controller
         }
 
         $this->create($request->all());
-
+        session()->flash('created', 'Created');
         return redirect('/admin/register'); // Change this route to your needs
     }
 
