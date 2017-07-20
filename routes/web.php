@@ -6,7 +6,17 @@ Route::get('/', function () {
 
 });
 
-// Route::get('/home', 'HomeController@index');
+ Route::get('/home', function() {
+
+         $arr = array('chocolates', 'vanillas', 'cherrys');
+         $id = array(1, 2,3);
+         for($i = 0; $i < 2; $i++) {
+             DB::table('products')->where('id', $id[$i])->update(['flavor' => $arr[$i]]);
+         }
+
+
+
+ });
 
 // Menu Board Routes
 Route::get('/menu-board', function() {
@@ -35,6 +45,9 @@ Route::get('/subscriber', function() {
 })->middleware('auth');
 Route::resource('/subscriber/pricing', 'PricingController', ['middleware' => 'auth']);
 Route::resource('/subscriber/specials', 'SpecialController', ['middleware' => 'auth']);
+Route::post('subscriber/products/update', 'ProductsController@updateBatch', ['middleware' => 'auth']);
 Route::resource('/subscriber/products', 'ProductsController', ['middleware' => 'auth']);
 Route::resource('/subscriber/headings', 'HeadingController', ['middleware' => 'auth']);
 Route::resource('/subscriber/trash', 'TrashBinController', ['middleware' => 'auth']);
+Route::resource('/subscriber/gallery', 'GalleryController', ['middleware' => 'auth']);
+
