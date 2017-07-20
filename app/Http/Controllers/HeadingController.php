@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\File;
 use Illuminate\Http\Request;
 use App\Heading;
 use App\Images;
+
 class HeadingController extends Controller
 {
     /**
@@ -15,7 +17,8 @@ class HeadingController extends Controller
     public function index()
     {
         $headings = Heading::all();
-        return view('subscriber.headings.index', compact('headings'));
+        $images = Images::where('id', 1)->get();
+        return view('subscriber.headings.index', compact('headings', 'images'));
     }
 
     /**
@@ -36,22 +39,16 @@ class HeadingController extends Controller
      */
     public function store(Request $request)
     {
-        $image = new Images();
-        if ($file = $request->file('file')){
-            $name = $file->getClientOriginalName();
-            $file->move('images', $name);
-            $image->image_path = $name;
-            $image->save();
-        }
 
-        $heading = new Heading();
-        $heading->products = $request['products'];
-        $heading->pricing = $request['pricing'];
-        $heading->specials = $request['specials'];
-        $heading->created_at = date('Y-m-d H:i:s');
-        $heading->updated_at  =  date('Y-m-d H:i:s');
-        $heading->save();
-        return redirect('/subscriber/headings');
+//
+//        $heading = new Heading();
+//        $heading->products = $request['products'];
+//        $heading->pricing = $request['pricing'];
+//        $heading->specials = $request['specials'];
+//        $heading->created_at = date('Y-m-d H:i:s');
+//        $heading->updated_at  =  date('Y-m-d H:i:s');
+//        $heading->save();
+//        return redirect('/subscriber/headings');
     }
 
     /**
@@ -85,8 +82,11 @@ class HeadingController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+
         $headings = Heading::findOrFail($id);
         $headings->update($request->all());
+        session()->flash('updated', 'Updated');
         return redirect('/subscriber/headings');
     }
 
@@ -102,4 +102,5 @@ class HeadingController extends Controller
         $headings->delete();
         return redirect('/subscriber/headings');
     }
+
 }

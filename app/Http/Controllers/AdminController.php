@@ -74,6 +74,7 @@ class AdminController extends Controller
     {
         $users = User::findOrFail($id);
         $users->update($request->all());
+        session()->flash('updated', 'Updated');
         return redirect('admin/show');
     }
 
@@ -88,6 +89,7 @@ class AdminController extends Controller
     {
         $users = User::findOrFail($id);
         $users->delete();
+        session()->flash('deleted', 'Deleted');
         return redirect('admin/show');
     }
 }

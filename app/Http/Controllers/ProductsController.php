@@ -83,6 +83,7 @@ class ProductsController extends Controller
     {
         $products = Product::findOrFail($id);
         $products->update($request->all());
+        session()->flash('updated', 'Updated');
         return redirect('/subscriber/products');
 
     }
@@ -98,5 +99,20 @@ class ProductsController extends Controller
         $products = Product::findOrFail($id);
         $products->delete();
         return redirect('/subscriber/products');
+    }
+    public function updateBatch(Request $request)
+    {
+        $flavors = [];
+        // your arrays can be done like this
+        foreach($request->get('flavor') as $key => $value)
+        {
+            $flavors['flavor'. $key] = $value; // you can set rules for all the array items
+            DB::table('products')->where('id', $key)->update(['flavor' => $flavors['flavor'. $key]]);
+
+
+        }
+        session()->flash('updated', 'Updated');
+        return redirect('/subscriber/products');
+
     }
 }

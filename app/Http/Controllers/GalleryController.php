@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Pricing;
+use App\Images;
 use Illuminate\Http\Request;
 
-class PricingController extends Controller
+class GalleryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,8 @@ class PricingController extends Controller
      */
     public function index()
     {
-        $prices = Pricing::all();
-        return view('subscriber.pricing.index', compact('prices'));
+        $images = Images::all();
+        return view('subscriber.gallery.index', compact('images'));
     }
 
     /**
@@ -24,7 +24,7 @@ class PricingController extends Controller
      */
     public function create()
     {
-        return view('subscriber.pricing.index');
+        //
     }
 
     /**
@@ -35,13 +35,14 @@ class PricingController extends Controller
      */
     public function store(Request $request)
     {
-        $prices = new Pricing();
-        $prices->size = $request['size'];
-        $prices->price = $request['price'];
-        $prices->created_at = date('Y-m-d H:i:s');
-        $prices->updated_at  =  date('Y-m-d H:i:s');
-        $prices->save();
-        return redirect('/subscriber/pricing');
+        $image = new Images();
+        if ($file = $request->file('file')){
+            $name = $file->getClientOriginalName();
+            $file->move('images', $name);
+            $image->image_path = $name;
+            $image->save();
+        }
+        return redirect('/subscriber/gallery');
     }
 
     /**
@@ -52,6 +53,7 @@ class PricingController extends Controller
      */
     public function show($id)
     {
+        //
     }
 
     /**
@@ -62,7 +64,7 @@ class PricingController extends Controller
      */
     public function edit($id)
     {
-
+        //
     }
 
     /**
@@ -70,15 +72,11 @@ class PricingController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Responsed
+     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $prices = Pricing::findOrFail($id);
-        $prices->update($request->all());
-        session()->flash('updated', 'Updated');
-        return redirect('/subscriber/pricing');
-
+        //
     }
 
     /**
@@ -89,8 +87,6 @@ class PricingController extends Controller
      */
     public function destroy($id)
     {
-        $prices = Pricing::findOrFail($id);
-        $prices->delete();
-        return redirect('/subscriber/pricing');
+        //
     }
 }
