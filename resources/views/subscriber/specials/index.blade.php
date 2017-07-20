@@ -2,29 +2,50 @@
 
 @section('content')
 
-
-
     <subscriber-widget></subscriber-widget>
     <div id="page-content-wrapper">
+            @if(session()->has('created'))
+                <div class="alert alert-success">
+                    {{ session()->get('created')}}
+                </div>
+            @endif
+            @if(session()->has('updated'))
+                <div class="alert alert-success">
+                    {{ session()->get('updated')}}
+                </div>
+            @endif
+            @if(session()->has('deleted'))
+            <div class="alert alert-danger">
+                {{ session()->get('deleted')}}
+            </div>
+        @endif
         <div class="col-sm-offset-2 col-sm-10">
+
             <h2> Create New Special </h2>
         </div>
     {!! Form::open(['class' => 'form-horizontal', 'method' => 'POST', 'action' => 'SpecialController@store'])  !!}
-    <div class="form-group">
-        {!! Form::label('special', 'Special', ['class' => 'control-label col-sm-2']) !!}
-        <div class="col-sm-6">
-            {!! Form::text('special', null, ['class'=> 'form-control']) !!}
+        <div class="form-group">
+            {!! Form::label('special', 'Special', ['class' => 'control-label col-sm-2']) !!}
+            <div class="col-sm-6">
+                {!! Form::text('special', null, ['class'=> 'form-control']) !!}
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-        {!! Form::submit('Create Post', ['class' => 'btn btn-success']) !!}
-            {!! Form::close() !!}
+        <div class="form-group">
+
+            {!! Form::label('pricing', 'Pricing', ['class' => 'control-label col-sm-2']) !!}
+            <div class="col-sm-6">
+                {!! Form::text('pricing', null, ['class'=> 'form-control']) !!}
+            </div>
         </div>
-    </div>
-        <div class="col-sm-offset-2 col-sm-10">
-            <h2> Update Specials </h2>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+            {!! Form::submit('Create Post', ['class' => 'btn btn-success']) !!}
+                {!! Form::close() !!}
+            </div>
         </div>
+            <div class="col-sm-offset-2 col-sm-10">
+                <h2> Update Specials </h2>
+            </div>
     @foreach($specials as $special)
         {!! Form::model($special, ['class' => 'form-horizontal', 'method' => 'PATCH', 'action' => ['SpecialController@update', $special->id]])  !!}
 
@@ -33,6 +54,13 @@
                 {!! Form::label('special', 'Special', ['class' => 'control-label col-sm-2']) !!}
                 <div class="col-sm-6">
                     {!! Form::text('special', null, ['class'=> 'form-control']) !!}
+                </div>
+            </div>
+            <div class="form-group">
+
+                {!! Form::label('pricing', 'Pricing', ['class' => 'control-label col-sm-2']) !!}
+                <div class="col-sm-6">
+                    {!! Form::text('pricing', null, ['class'=> 'form-control']) !!}
                 </div>
             </div>
             <div class="form-group">

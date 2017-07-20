@@ -2,6 +2,12 @@
 
 @section('content')
     <subscriber-widget></subscriber-widget>
+    <div id="page-content-wrapper">
+    @if(session()->has('updated'))
+        <div class="alert alert-success">
+            {{ session()->get('updated')}}
+        </div>
+    @endif
     <div class="col-sm-offset-2 col-sm-10">
         <h2> Update Prices and Size </h2>
     </div>
@@ -30,5 +36,5 @@
         </div>
 
     @endforeach
-
+    </div>
 @endsection

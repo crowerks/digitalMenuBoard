@@ -141,12 +141,13 @@
             </div>
             <div class="position-burst-right">
                 <div id="starburst" class="starburst-blue text-white" style="background-image:url(images/starburst-blue.png);">
-                    <h3>special price</h3>
+                    <h3>${{\App\Special::active()->pricing}}</h3>
                 </div>
+
             </div>
             <div class="specialdiv">
                 <h2 class="text-black uppercase">
-                    {{ \App\Special::active() }}
+                    {{ \App\Special::active()->special }}
                 </h2>
             </div>
         </div>

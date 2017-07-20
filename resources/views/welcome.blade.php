@@ -75,6 +75,12 @@
                     @endif
                 </div>
             @endif
-            <h1>You have reached the Digital Menu-board please login to continue</h1>
+                @if (Auth::guest())
+                    <h1>You have reached the Digital Menu-board please <span><a href="{{ route('login') }}">Login</a></span> to continue</h1>
+                @else
+                    <a href="http://localhost/digitalMenuBoard/public/menu-board"><h1>Back to menu board </h1></a>
+                @endif
+
+
     </body>
 </html>

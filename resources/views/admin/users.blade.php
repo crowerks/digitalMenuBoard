@@ -5,6 +5,16 @@
 
     <admin-widget></admin-widget>
     <div id="page-content-wrapper">
+        @if(session()->has('updated'))
+            <div class="alert alert-success">
+                {{ session()->get('updated')}}
+            </div>
+        @endif
+        @if(session()->has('deleted'))
+            <div class="alert alert-danger">
+                {{ session()->get('deleted')}}
+            </div>
+        @endif
         @foreach($users as $user)
             {!! Form::model($user, ['class' => 'form-horizontal', 'method' => 'PATCH', 'action' => ['AdminController@update', $user->id]] )  !!}
             <div class="form-group">
@@ -55,6 +65,7 @@
       </div>
     </div>
 
-  </div>
+
     @endforeach
+    </div>
 @endsection

@@ -28,8 +28,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        Digital Menu Board
+                    <a class="navbar-brand" >
+
                     </a>
                 </div>
 

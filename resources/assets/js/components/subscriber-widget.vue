@@ -22,7 +22,7 @@
                           <a href="http://localhost/digitalMenuBoard/public/subscriber/specials">Specials</a>
                       </li>
                       <li>
-                        <!-- <a href="http://localhost/digitalMenuBoard/public/subscriber/trash">Trash Bin</a>-->
+                         <!--<a href="http://localhost/digitalMenuBoard/public/subscriber/gallery">Gallery</a>-->
                       </li>
 
                   </ul>
