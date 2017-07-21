@@ -3,20 +3,30 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class Special extends Model
 {
-    protected $fillable = ['special', 'active', 'pricing'];
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
+    protected $fillable = ['special', 'active', 'pricing', 'deleted_at'];
+
 
     public function scopeActive($query)
     {
-        if ($query->where('active', 1)->first()) {
-            return $query->where('active', 1)->first();
+      $input =  Special::pluck('active');
+//    $arr = [];
+      foreach($input as $i) {
+  //       array_push($arr, $i);
+        if($i == 2) {
+          return true;
         }
-        else {
-           return "Please activate a special";
-        }
-
+      }
+//     if (in_array(2, $arr)){
+//       return true;
+//
+//     }else {
+//      return false;
+//     }
+       return false;
     }
-
 }

@@ -8,15 +8,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Product extends Model
 {
     use SoftDeletes;
-    use \Rutorika\Sortable\SortableTrait;
+
     protected $dates = ['deleted_at'];
     protected $primaryKey = 'id';
-    protected $fillable = ['product_heading', 'flavor', 'order', 'deleted_at'];
+    protected $fillable = ['product_heading', 'flavor', 'deleted_at'];
 
     public function scopeChosenElements($query, $skip)
     {
-//        return $query->where('order', '>=', $orderMin)->where('order', '<=', $orderMax)->orderBy('flavor', 'asc')->get();
-        return $query->orderBy('flavor', 'asc')->take(5)->skip($skip)->get();
+        return $query->orderBy('id', 'asc')->take(5)->skip($skip)->get();
     }
 
 }
