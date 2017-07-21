@@ -41,5 +41,17 @@
                 </div>
 
         @endforeach
+    <div class="col-xs-12 col-sm-4">
+        <br/>
+        <img src="../images/products-heading.jpg" class="img-thumbnail img-responsive" alt="Images">
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <br/>
+        <img src="../images/pricing-heading.jpg" class="img-thumbnail img-responsive" alt="Images">
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <br/>
+        <img src="../images/specials-heading.jpg" class="img-thumbnail img-responsive" alt="Images">
+    </div>
     </div>
 @endsection

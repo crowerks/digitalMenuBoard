@@ -16,13 +16,16 @@
                         <a href="http://localhost/digitalMenuBoard/public/admin/show">Users</a>
                     </li>
                 </ul>
+
              </div>
 
-             <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Panel</a>
 
-         </div>
+
         <!-- /#wrapper -->
+
+      <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Panel</a>
       </div>
+
 </template>
 
 <script>

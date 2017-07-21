@@ -51,6 +51,9 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="http://localhost/digitalMenuBoard/public/menu-board">Menu-Board</a>
+                                    </li>
                                     @if(Auth::user()->isRole('Administrator'))
                                         <li>
                                             <a href="http://localhost/digitalMenuBoard/public/admin">Administrator</a>
@@ -81,12 +84,13 @@
         <div class="clear-fix"></div>
         <div class="container-fluid">
             <div id="wrapper" class="toggled">
-            @yield('content')
+                @yield('content')
             </div>
         </div>
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 </html>

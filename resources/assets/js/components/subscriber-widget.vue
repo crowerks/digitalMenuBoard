@@ -33,7 +33,7 @@
 
               <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Panel</a>
 
-          </div>
+
           <!-- /#wrapper -->
         </div>
 </template>
