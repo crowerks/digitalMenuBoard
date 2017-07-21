@@ -141,13 +141,24 @@
             </div>
             <div class="position-burst-right">
                 <div id="starburst" class="starburst-blue text-white" style="background-image:url(images/starburst-blue.png);">
-                    <h3>${{\App\Special::active()->pricing}}</h3>
+                    <h2 class="text-black uppercase">
+                        @if(App\Special::active() == '2')
+                            ${{ App\Special::where('active', '=', 2)->pluck('pricing')[0] }}
+                        @elseif (App\Special::active())
+                            $
+                        @endif
+                    </h2>
                 </div>
 
             </div>
             <div class="specialdiv">
                 <h2 class="text-black uppercase">
-                    {{ \App\Special::active()->special }}
+                    @if(App\Special::active() == '2')
+                        {{ App\Special::where('active', '=', 2)->pluck('special')[0] }}
+                    @elseif (App\Special::active())
+                        Please Input a Special
+
+                    @endif
                 </h2>
             </div>
         </div>

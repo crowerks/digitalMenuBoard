@@ -5,6 +5,7 @@
     <div id="page-content-wrapper">
         @if(session()->has('updated'))
             <div class="alert alert-success">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 {{ session()->get('updated')}}
             </div>
         @endif
@@ -20,9 +21,9 @@
             </div>
         </div>
         {{--<div class="form-group">--}}
-            {{--{!! Form::label('order', 'Order', ['class' => 'control-label col-sm-2']) !!}--}}
+            {{--{!! Form::label('flavor_order', 'Order', ['class' => 'control-label col-sm-2']) !!}--}}
             {{--<div class="col-sm-6">--}}
-                {{--{!! Form::text('order', null, ['class'=> 'form-control']) !!}--}}
+                {{--{!! Form::text('flavor_order[]', null, ['class'=> 'form-control', 'id' => $product->id]) !!}--}}
             {{--</div>--}}
         {{--</div>--}}
 
