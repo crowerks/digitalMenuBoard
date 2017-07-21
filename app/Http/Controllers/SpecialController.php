@@ -13,7 +13,7 @@ class SpecialController extends Controller
      */
     public function index()
     {
-        $specials = Special::all();
+        $specials = Special::where('active' ,'<', 3)->orderBy('active', 'desc')->get();
         return view('subscriber.specials.index', compact('specials'));
     }
 
@@ -38,7 +38,7 @@ class SpecialController extends Controller
         $special = new Special();
         $special->special = $request['special'];
         $special->pricing = $request['pricing'];
-        $special->active = 0;
+        $special->active = 1;
         $special->created_at = date('Y-m-d H:i:s');
         $special->updated_at  =  date('Y-m-d H:i:s');
         session()->flash('created', 'Created');
@@ -80,7 +80,6 @@ class SpecialController extends Controller
         $specials->update($request->all());
         session()->flash('updated', 'Updated');
         return redirect('/subscriber/specials');
-
     }
 
     /**

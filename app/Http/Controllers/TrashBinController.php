@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Product;
+use App\Special;
 class TrashBinController extends Controller
 {
     /**
@@ -13,8 +13,8 @@ class TrashBinController extends Controller
      */
     public function index()
     {
-        $products = Product::onlyTrashed()->get();
-        return view('subscriber.trashBin.index', compact('products'));
+        $specials = Special::onlyTrashed()->get();
+        return view('subscriber.trashBin.index', compact('specials'));
     }
 
     /**
@@ -69,7 +69,8 @@ class TrashBinController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Product::where('id', $id)->restore();
+        session()->flash('restored', 'Restored');
+        Special::where('id', $id)->restore();
         return redirect('/subscriber/trash');
     }
 
@@ -81,7 +82,8 @@ class TrashBinController extends Controller
      */
     public function destroy($id)
     {
-        Product::where('id', $id)->forcedelete();
+        session()->flash('deleted', 'Deleted');
+        Special::where('id', $id)->forcedelete();
         return redirect('/subscriber/trash');
 
     }

@@ -17,9 +17,10 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        $products = Product::where('order', '<=', 40)->orderBy('flavor', 'asc')->get();
+        $products = Product::where('id', '<=', 40)->orderBy('id', 'asc')->get();
 
         return view('subscriber.products.index', compact('products'));
     }
@@ -102,17 +103,26 @@ class ProductsController extends Controller
     }
     public function updateBatch(Request $request)
     {
-        $flavors = [];
+//        $flavor_order = [];
+            $flavors = [];
+//        foreach($request->get('flavor_order') as $key => $value) {
+//            $key++;
+//            $flavor_order['flavor_order' . $key] = $value; // you can set rules for all the array items
+//            DB::table('products')->where('id', $key)->update(['flavor_order' => $flavor_order['flavor_order' . $key]]);
+//        }
+
         // your arrays can be done like this
-        foreach($request->get('flavor') as $key => $value)
+        foreach($request->get('flavor') as $key   => $value)
         {
+            $key++;
             $flavors['flavor'. $key] = $value; // you can set rules for all the array items
             DB::table('products')->where('id', $key)->update(['flavor' => $flavors['flavor'. $key]]);
-
+             echo $flavors['flavor'. $key];
 
         }
         session()->flash('updated', 'Updated');
         return redirect('/subscriber/products');
 
+//return $flavor_order;
     }
 }
