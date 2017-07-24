@@ -52,14 +52,14 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="http://localhost/digitalMenuBoard/public/menu-board">Menu-Board</a>
+                                        <a href="{{url('/menu-board')}}">Menu-Board</a>
                                     </li>
                                     @if(Auth::user()->isRole('Administrator'))
                                         <li>
-                                            <a href="http://localhost/digitalMenuBoard/public/admin">Administrator</a>
+                                            <a href="{{url('/admin')}}">Administrator</a>
                                         </li>
                                         <li>
-                                            <a href="http://localhost/digitalMenuBoard/public/subscriber">Subscriber</a>
+                                            <a href="{{url('/subscriber')}}">Subscriber</a>
                                         </li>
                                     @endif
                                     <li>

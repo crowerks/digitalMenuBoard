@@ -7,13 +7,13 @@
                 <ul class="sidebar-nav">
 
                     <li>
-                        <a href="http://localhost/digitalMenuBoard/public/admin">Dashboard</a>
+                        <a href="{{url('/admin')}}">Dashboard</a>
                     </li>
                     <li>
-                        <a href="http://localhost/digitalMenuBoard/public/admin/register">Register</a>
+                        <a href="{{url('/register')}}">Register</a>
                     </li>
                     <li>
-                        <a href="http://localhost/digitalMenuBoard/public/admin/show">Users</a>
+                        <a href="{{url('/show')}}">Users</a>
                     </li>
                 </ul>
 

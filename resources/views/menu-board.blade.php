@@ -2,7 +2,7 @@
 @extends('layouts.menu-board-template')
 @section('content')
 <div class="navbar-brand">
-    <a href="http://localhost/digitalMenuBoard/public/subscriber"><img src="http://schwieterts.com/wp-content/uploads/2016/07/Schwieterts-Cones-and-Candy.png" title="Schwieterts Cones and Candy - The candy store with more!" alt="Schwieterts Cones and Candy - The candy store with more!" class="brand-logo img-responsive"></a>
+    <a href="{{url('/subscriber')}}"><img src="http://schwieterts.com/wp-content/uploads/2016/07/Schwieterts-Cones-and-Candy.png" title="Schwieterts Cones and Candy - The candy store with more!" alt="Schwieterts Cones and Candy - The candy store with more!" class="brand-logo img-responsive"></a>
 </div>
 <div class="row all0 full-height white-bar-top" style="border-image: url(images/color-bar.jpg) 50 repeat stretch;">
     <div class="col-xs-6 bg-pink full-height all0" style="background-image:url(images/ice-cream-edit.jpg);">
@@ -145,7 +145,7 @@
                         @if(App\Special::active() == '2')
                             ${{ App\Special::where('active', '=', 2)->pluck('pricing')[0] }}
                         @elseif (App\Special::active())
-                            $
+                            
                         @endif
                     </h2>
                 </div>
@@ -156,7 +156,7 @@
                     @if(App\Special::active() == '2')
                         {{ App\Special::where('active', '=', 2)->pluck('special')[0] }}
                     @elseif (App\Special::active())
-                        Please Input a Special
+
 
                     @endif
                 </h2>

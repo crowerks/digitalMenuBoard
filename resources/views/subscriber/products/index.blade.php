@@ -15,7 +15,7 @@
     @foreach($products as $product)
         {!! Form::model($product, ['class' => 'form-horizontal', 'method' => 'POST', 'action' => ['ProductsController@updateBatch']])  !!}
         <div class="form-group">
-            {!! Form::label('flavor', 'Flavor', ['class' => 'control-label col-sm-2']) !!}
+            {!! Form::label('flavor', 'Flavor'. ' ' . $product->id, ['class' => 'control-label col-sm-2']) !!}
             <div class="col-sm-6">
                 {!! Form::text('flavor[]', null, ['class'=> 'form-control', 'id' => $product->id]) !!}
             </div>

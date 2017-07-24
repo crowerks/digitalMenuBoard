@@ -41,6 +41,7 @@
                 </div>
 
         @endforeach
+    <h3>Menu Board Examples:</h3>
     <div class="col-xs-12 col-sm-4">
         <br/>
         <img src="../images/products-heading.jpg" class="img-thumbnail img-responsive" alt="Images">
