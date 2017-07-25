@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -63,24 +63,28 @@
                 margin-bottom: 30px;
             }
 
+ 	    .btn {
+                margin-left: 48%;
+            }
+
+	 @media(max-width: 1024px) {
+                .btn {
+                    margin-left: 40%;
+                }
+            }
+
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::guest())
-                        <a href="{{ url('/login') }}">Login</a>
-
-                    @endif
-                </div>
+        <div class="flex-center position-ref ">
+            @if (Auth::guest())
+                <h1>Digital Menu-Board</h1>
+                <br />
+        </div>
+                <a href="{{ route('login') }}"><button class="btn btn-primary btn-lg">Login</button></a>
+            @else
+                <a href="{{ route('login') }}"><h1>Back to menu board </h1></a>
             @endif
-                @if (Auth::guest())
-                    <h1>You have reached the Digital Menu-board please <span><a href="{{ route('login') }}">Login</a></span> to continue</h1>
-                @else
-                    <a href="{{ url('/subscriber') }}"><h1>Back to menu board </h1></a>
-                @endif
-
 
     </body>
 </html>

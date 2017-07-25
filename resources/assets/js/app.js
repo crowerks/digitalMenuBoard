@@ -28,3 +28,7 @@ $("#menu-toggle").click(function(e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
 });
+
+if ($(window).width() < "1024") {
+    $("#wrapper").removeClass("toggled");
+}
