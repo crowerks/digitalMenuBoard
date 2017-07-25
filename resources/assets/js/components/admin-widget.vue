@@ -7,13 +7,13 @@
                 <ul class="sidebar-nav">
 
                     <li>
-                        <a href="{{url('/admin')}}">Dashboard</a>
+                        <a href="http://34.212.187.129/admin">Dashboard</a>
                     </li>
                     <li>
-                        <a href="{{url('/register')}}">Register</a>
+                        <a href="http://34.212.187.129/admin/register">Register</a>
                     </li>
                     <li>
-                        <a href="{{url('/show')}}">Users</a>
+                        <a href="http://34.212.187.129/admin/show">Users</a>
                     </li>
                 </ul>
 

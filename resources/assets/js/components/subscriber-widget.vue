@@ -7,22 +7,22 @@
                   <ul class="sidebar-nav">
 
                       <li>
-                          <a href="{{url('/subscriber')}}">Dashboard</a>
+                          <a href="http://34.212.187.129/subscriber">Dashboard</a>
                       </li>
                       <li>
-                          <a href="{{url('/headings')}}">Headings</a>
+                          <a href="http://34.212.187.129/subscriber/headings">Headings</a>
                       </li>
                       <li>
-                          <a href="{{url('/products')}}">Products</a>
+                          <a href="http://34.212.187.129/subscriber/products">Products</a>
                       </li>
                       <li>
-                          <a href="{{url('/pricing')}}">Pricing</a>
+                          <a href="http://34.212.187.129/subscriber/pricing">Pricing</a>
                       </li>
                       <li>
-                          <a href="{{url('/specials')}}">Specials</a>
+                          <a href="http://34.212.187.129/subscriber/specials">Specials</a>
                       </li>
                       <li>
-                         <a href="{{url('/trash')}}">Trash Bin</a>
+                         <a href="http://34.212.187.129/subscriber/trash">Trash Bin</a>
                       </li>
                       <li>
                          <!--<a href="http://localhost/digitalMenuBoard/public/subscriber/gallery">Gallery</a>-->
